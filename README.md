@@ -1,149 +1,84 @@
-# Job Scraper - LinkedIn & Computrabajo
+# 🚀 Job Searcher App (Rails 8 + Python Scrapers)
 
-A Python-based web scraper to search for job opportunities on LinkedIn and Computrabajo, with filtering by company ratings and salary information.
+Una aplicación potente construida con **Ruby on Rails 8** que utiliza scripts de **Python (Playwright)** para buscar y centralizar vacantes de múltiples plataformas en tiempo real.
 
-## Features
+## ✨ Funcionalidades Principales
 
-### Computrabajo Scraper
+* **Multi-Plataforma Scraping**: Busca vacantes automáticamente en:
+  * **Indeed** 🔍
+  * **Computrabajo** (con soporte para puntajes de empresas) ⭐
+  * **El Empleo** 🇨🇴
+  * **LinkedIn** (Búsqueda pública, sin necesidad de login) 🌐
+* **Gestión de Aplicaciones**:
+  * Filtra trabajos por título, empresa o puntaje.
+  * Sistema de **Estados**: Marca vacantes como *Pendiente*, *Aplicado*, *Rechazado* o *Ignorado*.
+  * Vista limpia: Los trabajos ignorados se ocultan automáticamente.
+* **Reportes y Exportación**:
+  * Genera reportes en **Excel (.xlsx)** y **CSV**.
+  * Nomenclatura inteligente con timestamp (`jobs-YYYYMMDD_HHMMSS`) para evitar duplicados.
+  * Las exportaciones respetan los filtros aplicados en la web.
+* **Automatización**:
+  * Procesamiento en segundo plano con **Solid Queue**.
+  * **Tarea Recurrente**: Limpieza automática de vacantes con más de una semana de antigüedad (ejecutada diariamente a las 3:00 AM).
+* **Interfaz Moderna**: Construida con Bootstrap 5, diseño responsivo y notificaciones Turbo.
 
-- 🔍 Search jobs by keyword
-- ⭐ Filter by company rating/score
-- 💰 Extract salary information when available
-- 📊 Sort results by company rating (highest first)
-- 🎯 Only returns positions with both company score and salary
+## 🛠️ Requisitos del Sistema
 
-### LinkedIn Scraper
+* **Ruby**: 3.2.2+
+* **Python**: 3.10+ (dentro de un entorno virtual `./venv`)
+* **Node.js**: Para compilación de CSS (Bootstrap)
+* **PostgreSQL**: Base de datos principal.
 
-- 🔍 Search jobs by position
-- 🔐 Session management with cookie persistence
-- 📍 Extract job title, company, location, and URL
+## 🚀 Instalación y Configuración
 
-## Installation
+1. **Clonar y Dependencias**:
 
-1. Clone the repository:
+    ```bash
+    bundle install
+    npm install
+    # Configurar venv de python
+    python3 -m venv venv
+    ./venv/bin/pip install -r requirements.txt
+    ```
+
+2. **Base de Datos**:
+
+    ```bash
+    bin/rails db:prepare
+    ```
+
+3. **Ejecución**:
+    Para iniciar todos los servicios (Web, CSS Watcher y Job Worker):
+
+    ```bash
+    bin/dev
+    ```
+
+## 🧪 Pruebas
+
+Para ejecutar la suite de pruebas (incluyendo la nueva limpieza automática):
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/linkedinSearcher.git
-cd linkedinSearcher
+bin/rails test
 ```
 
-2. Create a virtual environment:
+## 🔑 Configuración de LinkedIn (Importante)
 
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+Para que la búsqueda en LinkedIn funcione con tu cuenta y obtenga mejores resultados:
 
-3. Install dependencies:
+1. Cierra todas las sesiones de Rails o terminales relacionadas con LinkedIn.
+2. Ejecuta el script de autenticación:
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    ./venv/bin/python get_linkedin_cookies.py
+    ```
 
-4. Install Playwright browsers:
+3. Se abrirá una ventana de Chrome. Inicia sesión manualmente.
+4. Una vez veas tu perfil, cierra la ventana o regresa a la terminal.
+5. El archivo `linkedin_cookies.json` se habrá creado y la aplicación lo usará automáticamente en segundo plano.
 
-```bash
-playwright install chromium
-```
+## 📋 Tareas Programadas (Recurring Tasks)
 
-## Usage
+La aplicación utiliza `Solid Queue` para tareas recurrentes. Configurado en `config/recurring.yml`:
 
-### Computrabajo Scraper
-
-```python
-import asyncio
-from computrabajo_searcher import ComputrabajoScraper
-
-async def main():
-    scraper = ComputrabajoScraper()
-    results = await scraper.search("Desarrollador", limit=10)
-    
-    for job in results:
-        print(f"{job['title']} at {job['company']}")
-        print(f"Score: {job['score']} | Salary: {job['salary']}")
-        print(f"URL: {job['url']}\n")
-
-asyncio.run(main())
-```
-
-### LinkedIn Scraper
-
-```python
-import asyncio
-from linkedin_scrapper import LinkedInScraper
-
-async def main():
-    scraper = LinkedInScraper()
-    jobs = await scraper.search("Software Engineer", limit=10)
-    
-    for job in jobs:
-        print(f"{job['title']} at {job['company']}")
-        print(f"Location: {job['location']}")
-        print(f"URL: {job['url']}\n")
-
-asyncio.run(main())
-```
-
-**Note**: For LinkedIn, you'll need to log in manually the first time. The scraper will save your session cookies for future use.
-
-## Project Structure
-
-```
-linkedinSearcher/
-├── computrabajo_searcher.py  # Computrabajo scraper
-├── linkedin_scrapper.py      # LinkedIn scraper
-├── linkedin_searcher.py      # Legacy LinkedIn scraper
-├── requirements.txt          # Python dependencies
-├── .gitignore               # Git ignore rules
-└── README.md                # This file
-```
-
-## Requirements
-
-- Python 3.8+
-- playwright
-- asyncio
-
-## Output Format
-
-### Computrabajo Results
-
-```json
-{
-  "title": "Desarrollador Full Stack",
-  "company": "Tech Company S.A.S",
-  "location": "Bogotá, D.C.",
-  "score": 4.6,
-  "salary": "$ 3.500.000,00 (Mensual)",
-  "url": "https://co.computrabajo.com/..."
-}
-```
-
-### LinkedIn Results
-
-```json
-{
-  "title": "Software Engineer",
-  "company": "Tech Corp",
-  "location": "Remote",
-  "url": "https://www.linkedin.com/jobs/..."
-}
-```
-
-## Notes
-
-- **Computrabajo**: Only returns jobs with both company rating and salary information
-- **LinkedIn**: Requires manual login on first use; cookies are saved for subsequent runs
-- **Rate Limiting**: Be respectful of the websites' resources and don't scrape too aggressively
-
-## License
-
-MIT License
-
-## Author
-
-Santiago Perez (<santipego0001@gmail.com>)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+* `weekly_job_cleanup`: Elimina vacantes de > 7 días. Ejecución: 3:00 AM diario.

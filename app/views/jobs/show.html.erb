@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to "Jobs", jobs_path %></li>
+      <li class="breadcrumb-item active" aria-current="page">Job Details</li>
+    </ol>
+  </nav>
+
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <%= render @job %>
+
+  <div class="mt-4 d-flex gap-2">
+    <%= link_to "Edit this job", edit_job_path(@job), class: "btn btn-outline-secondary" %>
+    <%= link_to "Back to jobs", jobs_path, class: "btn btn-outline-primary" %>
+    <div class="ms-auto">
+      <%= button_to "Remove from List", @job, method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>

@@ -1,87 +1,99 @@
 import asyncio
 import json
+import sys
 from pathlib import Path
 from playwright.async_api import async_playwright
 
+# File where session cookies are stored
 COOKIES_FILE = "linkedin_cookies.json"
 
-
 class LinkedInScraper:
-    BASE_URL = "https://www.linkedin.com/jobs/search/?keywords="
-
-    def __init__(self):
-        self.cookies_loaded = False
+    # Authenticated search URL
+    BASE_URL = "https://www.linkedin.com/jobs/search/?keywords={}"
 
     async def load_cookies(self, context):
         if Path(COOKIES_FILE).exists():
-            cookies = json.loads(open(COOKIES_FILE).read())
-            await context.add_cookies(cookies)
-            self.cookies_loaded = True
+            with open(COOKIES_FILE, "r") as f:
+                cookies = json.loads(f.read())
+                await context.add_cookies(cookies)
+            return True
+        return False
 
-    async def save_cookies(self, context):
-        cookies = await context.cookies()
-        with open(COOKIES_FILE, "w") as f:
-            f.write(json.dumps(cookies, indent=2))
-
-    async def ensure_logged_in(self, page):
-        if "checkpoint" in page.url or "login" in page.url:
-            print("⚠️ You must login manually once...")
-
-            await page.goto("https://www.linkedin.com/login", wait_until="domcontentloaded")
-
-            # Wait for user login
-            await page.wait_for_selector("#global-nav-search", timeout=0)
-
-            print("✅ Logged in. Saving cookies...")
-            await self.save_cookies(page.context)
-
-    async def search(self, position, limit=10):
+    async def search(self, keyword, limit=10):
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=False)
-            context = await browser.new_context()
+            # Headless=True for background jobs (requires cookies)
+            # If no cookies, it will fail, which is expected for automated tasks
+            browser = await p.chromium.launch(headless=True)
+            context = await browser.new_context(
+                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+            )
 
-            # Load session cookies (if any)
-            await self.load_cookies(context)
+            has_cookies = await self.load_cookies(context)
+            if not has_cookies:
+                print("❌ LinkedIn Cookies not found. Please run 'python get_linkedin_cookies.py' first.")
+                await browser.close()
+                return []
 
             page = await context.new_page()
+            url = self.BASE_URL.format(keyword.replace(" ", "%20"))
+            
+            try:
+                await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                
+                # Check if we were redirected to login (expired cookies)
+                if "login" in page.url or "checkpoint" in page.url:
+                    print("❌ LinkedIn session expired. Please run the login script again.")
+                    await browser.close()
+                    return []
 
-            url = self.BASE_URL + position.replace(" ", "%20")
-            print(f"🔍 Searching: {url}")
+                # Wait for results
+                await page.wait_for_selector(".jobs-search-results-list", timeout=20000)
+                
+                # Small scroll to trigger lazy loading
+                await page.evaluate("window.scrollTo(0, 500)")
+                await asyncio.sleep(2)
 
-            await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                items = await page.query_selector_all(".jobs-search-results-list li.jobs-search-results-list__item")
+                jobs = []
 
-            # If login required, handle and retry
-            await self.ensure_logged_in(page)
-            await page.goto(url, wait_until="domcontentloaded")
+                for li in items[:limit]:
+                    title_el = await li.query_selector(".job-card-list__title")
+                    company_el = await li.query_selector(".job-card-container__primary-description")
+                    location_el = await li.query_selector(".job-card-container__metadata-item")
+                    link_el = await li.query_selector("a.job-card-list__title")
 
-            await page.wait_for_selector(".jobs-search-results-list", timeout=30000)
+                    if title_el and link_el:
+                        title = await title_el.inner_text()
+                        company = await company_el.inner_text() if company_el else "Unknown"
+                        location = await location_el.inner_text() if location_el else "Remote"
+                        link = await link_el.get_attribute("href")
+                        
+                        # Normalize URL
+                        if link and link.startswith("/"):
+                            link = "https://www.linkedin.com" + link
 
-            jobs = []
+                        jobs.append({
+                            "title": title.strip(),
+                            "company": company.strip(),
+                            "location": location.strip(),
+                            "url": link,
+                            "salary": None,
+                            "score": 0.0
+                        })
 
-            items = await page.query_selector_all("ul.jobs-search-results__list li")
+                await browser.close()
+                return jobs
 
-            for li in items[:limit]:
-                title = await li.query_selector_eval("h3", "el => el.innerText") if await li.query_selector("h3") else None
-                company = await li.query_selector_eval(".base-search-card__subtitle", "el => el.innerText") if await li.query_selector(".base-search-card__subtitle") else None
-                location = await li.query_selector_eval(".job-search-card__location", "el => el.innerText") if await li.query_selector(".job-search-card__location") else None
-                link = await li.query_selector_eval("a", "el => el.href") if await li.query_selector("a") else None
-
-                jobs.append({
-                    "title": title,
-                    "company": company.strip() if company else None,
-                    "location": location,
-                    "url": link,
-                })
-
-            await browser.close()
-            return jobs
-
+            except Exception as e:
+                print(f"⚠️ Error during LinkedIn search: {e}")
+                await browser.close()
+                return []
 
 async def main():
+    keyword = sys.argv[1] if len(sys.argv) > 1 else "Software Engineer"
     scraper = LinkedInScraper()
-    jobs = await scraper.search("Software Engineer", limit=10)
-    print(json.dumps(jobs, indent=2))
-
+    results = await scraper.search(keyword, limit=10)
+    print(json.dumps(results, indent=2, ensure_ascii=False))
 
 if __name__ == "__main__":
     asyncio.run(main())

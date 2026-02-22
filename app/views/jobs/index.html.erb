@@ -1,0 +1,160 @@
+<div class="container mt-4">
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <%= alert %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap">
+    <div>
+      <h1 class="display-5 fw-bold mb-0">Job Searcher</h1>
+      <p class="text-muted mb-0">Track and manage your job applications across platforms</p>
+    </div>
+    <div class="d-flex gap-2 align-items-center mt-3 mt-md-0">
+      <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown">
+          <i class="bi bi-download"></i> Export Found Jobs
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><%= link_to "Download CSV", jobs_path(params.to_unsafe_h.merge(format: :csv)), class: "dropdown-item" %></li>
+          <li><%= link_to "Download Excel (.xlsx)", jobs_path(params.to_unsafe_h.merge(format: :xlsx)), class: "dropdown-item" %></li>
+        </ul>
+      </div>
+      <div class="vr mx-1"></div>
+      <%= link_to "Clear Filters", jobs_path, class: "btn btn-link text-decoration-none text-muted btn-sm" %>
+      <%= link_to "+ New Manual Job", new_job_path, class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+
+  <!-- Filter Form -->
+  <div class="card mb-3 border-0 bg-light-subtle">
+    <div class="card-body py-2">
+      <%= form_with url: jobs_path, method: :get, class: "row g-2 align-items-center", data: { turbo_frame: "jobs_table", turbo_action: "advance" } do |f| %>
+        <div class="col-md-3">
+          <%= f.text_field :query, value: params[:query], placeholder: "Filter list by title or company...", class: "form-control form-control-sm" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.select :source, options_for_select(@sources, params[:source]), { include_blank: "All Sources" }, class: "form-select form-select-sm" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.select :status, options_for_select(Job.statuses.keys.map { |s| [s.titleize, s] }, params[:status]), { include_blank: "Active (No Ignored)" }, class: "form-select form-select-sm" %>
+        </div>
+        <div class="col-md-3">
+          <div class="input-group input-group-sm">
+            <span class="input-group-text">Min Score</span>
+            <%= f.number_field :min_score, value: params[:min_score], step: 0.1, min: 0, max: 5, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit "Filter", class: "btn btn-sm btn-secondary w-100" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm border-primary-subtle">
+    <div class="card-body">
+      <%= form_with url: scrape_jobs_path, method: :post, class: "row g-3" do |f| %>
+        <div class="col-md-9">
+          <%= f.text_field :keyword, placeholder: "e.g. Ruby on Rails Developer", class: "form-control form-control-lg", required: true %>
+        </div>
+        <div class="col-md-3">
+          <%= f.submit "Search & Scrape", class: "btn btn-primary btn-lg w-100" %>
+        </div>
+      <% end %>
+      <div class="form-text mt-2">
+        This will run the Python scrapers in the background. It may take a minute to see results.
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow">
+    <div class="card-header bg-white py-3">
+      <h5 class="mb-0">Found Jobs (<%= @jobs.count %>)</h5>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Title</th>
+              <th>Company</th>
+              <th>Status</th>
+              <th>Location</th>
+              <th>Salary</th>
+              <th>Source</th>
+              <th>Score</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @jobs.each do |job| %>
+              <tr class="<%= 'opacity-50 grayscale' if job.ignored? %>">
+                <td>
+                  <div class="fw-bold"><%= job.title %></div>
+                </td>
+                <td><%= job.company %></td>
+                <td>
+                  <% status_class = { 'pending' => 'bg-info', 'applied' => 'bg-primary', 'rejected' => 'bg-danger', 'ignored' => 'bg-secondary' }[job.status] %>
+                  <span class="badge <%= status_class %>"><%= job.status.titleize %></span>
+                </td>
+                <td><%= job.location %></td>
+                <td>
+                  <span class="badge bg-success-subtle text-success border border-success-subtle">
+                    <%= job.salary.presence || "Not specified" %>
+                  </span>
+                </td>
+                <td>
+                  <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">
+                    <%= job.source %>
+                  </span>
+                </td>
+                <td>
+                  <% if job.score > 0 %>
+                    <span class="badge bg-warning text-dark">
+                      <%= job.score %> ⭐
+                    </span>
+                  <% else %>
+                    <span class="text-muted small">N/A</span>
+                  <% end %>
+                </td>
+                <td>
+                  <div class="dropdown d-inline-block">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><%= button_to "Mark Applied", update_status_job_path(job, status: :applied), method: :patch, class: "dropdown-item text-primary" %></li>
+                      <li><%= button_to "Mark Rejected", update_status_job_path(job, status: :rejected), method: :patch, class: "dropdown-item text-danger" %></li>
+                      <li><%= button_to "Ignore/Archive", update_status_job_path(job, status: :ignored), method: :patch, class: "dropdown-item text-muted" %></li>
+                      <li><%= button_to "Reset to Pending", update_status_job_path(job, status: :pending), method: :patch, class: "dropdown-item" %></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group btn-group-sm">
+                    <%= link_to "View", job, class: "btn btn-outline-info" %>
+                    <%= link_to "Apply", job.url, class: "btn btn-primary", target: "_blank" %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+            <% if @jobs.empty? %>
+              <tr>
+                <td colspan="7" class="text-center py-5 text-muted">
+                  No jobs found. Try searching for something!
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

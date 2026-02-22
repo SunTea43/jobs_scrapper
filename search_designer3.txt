@@ -1,0 +1,83 @@
+🔎 Loading Indeed results for: Diseñador Gráfico in Colombia …
+[
+  {
+    "title": "Diseñador Gráfico",
+    "company": "La Fuente Cargo Corp",
+    "location": "Desde casa",
+    "salary": null,
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=c5d96133262d7187&bb=SYdibQXNLIyvm5qV8kTLbVInillBKlAnAkki6Vy7zUoheZj6_EJYUikCcKFFI9OhgNGVv1nPuO7jMYTclYgxk9ZQtLQc3ChNcyO5TTrncXH7zPV1MvkDnhMgBuxj3tFi&xkcb=SoBu67M3mDQkEYy4xh0LbzkdCdPP&fccid=2b90b1ef4c8d1ada&cmp=La-Fuente-Cargo-Corp&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  },
+  {
+    "title": "Diseñador Gráfico",
+    "company": "Creategia",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$4.000.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=7c378e53db37169a&bb=SYdibQXNLIyvm5qV8kTLbaQBALszNP3KxrqawNcKXYmyCAbZEMuTPGwHEU06L3CZGimbqoQyj2_KmdItE1svMB-QAXo8w3VTONKdMMtCv3sh4U2W8DPU6nPcZJ1BP2tB&xkcb=SoDa67M3mDQkEYy4xh0KbzkdCdPP&fccid=e4c81a09d78f016d&cmp=Creategia&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  },
+  {
+    "title": "DISEÑADOR/A GRAFICO",
+    "company": "ACTIVA LO NATURAL SAS",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$2.000.000 - $2.200.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=9aa3412fd96abd1e&bb=SYdibQXNLIyvm5qV8kTLbQn0Yd3PeWW4GUa_F7Ox_3vqx1Jneu54T4kdXAo84eopWj9_4ytk7BYQcih9icrUTJXLEBGFSQHCJUquHHl4_kwD1FfHpSb2ULHQVgG185tl&xkcb=SoBH67M3mDQkEYy4xh0JbzkdCdPP&fccid=b334bd2dabd3fa62&cmp=ACTIVA-LO-NATURAL-SAS&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  },
+  {
+    "title": "Diseñador Gráfico",
+    "company": "SPINNING CENTER GYM SAS",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$3.000.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=8b46ddfb85f63a84&bb=SYdibQXNLIyvm5qV8kTLbXVRpcP_2XbOp50VYyseWCehCJDszPZmIPgczkYNT6k_jYsUaHwkjrQlaV-4ZcCv83vyFCHnr_AIqIzKibTvygK4XR1_JYy5IWlxgp3QHlNR&xkcb=SoDz67M3mDQkEYy4xh0IbzkdCdPP&fccid=f3d61796cb34eb10&cmp=SPINNING-CENTER-GYM-SAS&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  },
+  {
+    "title": "Diseñador Gráfico Junior",
+    "company": "B Office S.A.S.",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$3.000.000 - $3.500.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=5eefbbd374bca740&bb=SYdibQXNLIyvm5qV8kTLbYlToiaCo32Yjil-FTzSfUsrJ6RngrvSzQbGgYAgj-Po5FtUCxTYw_GEvjJDrvsfGLqKivVsIBAYEgP28Ry_FpBji29-r0RtP7i0ez2Amx7x&xkcb=SoB967M3mDQkEYy4xh0PbzkdCdPP&fccid=dde5ba53df2d5b63&cmp=B-Office-S.A.S.&ti=Dise%C3%B1ador+gr%C3%A1fico+junior&vjs=3"
+  },
+  {
+    "title": "Diseñador Gráfico / Diseñador Visual Mid",
+    "company": "B Office S.A.S.",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$3.000.000 - $3.500.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=f81dda55b5bfd68d&bb=SYdibQXNLIyvm5qV8kTLbdiBr2mG1IGf3HHik97fzU9u9ts_6fg3oKNcuAVldzF91eD5EppoMU_-bibzd4fhXIwekLFiZm8a2ah6BM93agpmmk4QUbkj_d_PcBhbRAVn&xkcb=SoDJ67M3mDQkEYy4xh0ObzkdCdPP&fccid=dde5ba53df2d5b63&cmp=B-Office-S.A.S.&ti=Visual+designer&vjs=3"
+  },
+  {
+    "title": "Diseñador Gráfico",
+    "company": "PRODUCTOS ALIMENTICIOS PADEL S.A.S",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$2.200.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0DvWFR9nPJd1VheJ_iScocqXFAHoOM-RghkYMnc3W3_0NnTNSPj83ze7OPepGxEbKYao4VYaUFuiN0I5omsG4PZ8C3CpATDUkP1tSrfxZ39BqgSKNJ3bZN1xfdHMUinIhMc7_SfoKPQzaabkKjMQE7BYJSm2zr-RXS6--gOv4rYLaXGVsAPc7qejm0HpZc7VR9H5Z64C89KSDuvnsxxFS6gAK53bidVEWBosOyKjiWebccZYPgNjn4UWPKxtgOQW7filnHKb-PzGhmtiVyY2cnoQe79BipqtUk1dDYPJb4fDrmoQU51HadgTQwylzv2Oz2OU7gIFiXJYoiM7uf1DLoIjSbLx3Zyq_TlJUeG4FA7UG_9y01HJBZ2R9gSmgC_Sxacfd_P-0SAjnbwGsTK1JCcOTFBGPBoPsL0lPr8TIoTVejsR-YcXamzStmFjDjBHu9LcjDHjTKAKonkwQy9C94K1K9VFYLPm9I86nDUYAL9shNOHyURPe2U1QNPLLJP6mNZhI6mUl4HEFtr_dE5A4NPKewzCbQoBQglGngYKCPnRy8ine8-k5EeNhxkB36U_WV7JkE-qGw-wf4RUA1FBaY_FYAGAz_x6-lgHpVoRxK23hk8Ak-WxmcLUI-1LPceO4qNAc-uqdv8gcAOpMX5pX7S_T0ir2zR8uNrEYaukSJfWl4KCyS8bLmNThyYdfqtsVbA8hNtEgpBL_8VmFsEp_kE&xkcb=SoCg6_M3mDQkEYy4xh0NbzkdCdPP&camk=UoKtGZLa3XLvDq8KGD5iXg==&p=6&fvj=0&vjs=3"
+  },
+  {
+    "title": "Líder Diseñador Gráfico",
+    "company": "Otra",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$3.000.000 - $3.500.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=3e1fb10b2e4ecdbc&bb=SYdibQXNLIyvm5qV8kTLbbTPf6UZaYhSi_I_8p1EhdLX0eLLsA0j1tipOjCoYEwtQd2batKLJ3dULNaOV0N7-hSxMzvlepsLVwoH4udRrNFladlNgPe5hKJNemHTzE1Y&xkcb=SoDg67M3mDQkEYy4xh0MbzkdCdPP&fccid=0224dd62ac7f2389&cmp=Estrategia-Virtual-S.A.S&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  },
+  {
+    "title": "Líder Diseñador Gráfico",
+    "company": "Otra",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$3.000.000 - $3.500.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/viewjob?jk=abcdef0123456789"
+  },
+  {
+    "title": "Diseñador Grafico",
+    "company": "Iberopharma Nutrición Especializada",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$2.500.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=a69397b664f37366&bb=SYdibQXNLIyvm5qV8kTLbRyqS5ZYV0K-PL0z1kPmCjv3xnu5RpWZccjBlanwpxaVpWD4al4U7Y_Z2q7Ds8c0sp5ko5G99SITEJl5QJE0g6iGVytiCPR4Wj7lNEbanWJy&xkcb=SoAJ67M3mDQkEYy4xh0DbzkdCdPP&fccid=d7c1bc56511af3f0&cmp=Laboratorios-iberopharma-S.A.S&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  }
+]

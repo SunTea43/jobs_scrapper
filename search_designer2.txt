@@ -1,0 +1,43 @@
+🔎 Loading Indeed results for: Diseñador Gráfico in Colombia …
+[
+  {
+    "title": "Diseñador Gráfico",
+    "company": "La Fuente Cargo Corp",
+    "location": "Desde casa",
+    "salary": null,
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=c5d96133262d7187&bb=BqnrAl5v7VW0fvPa1NlzWDX6uV8JhkukWn2Bg2pAnJR1NFv_UTMu5-dojbumWq-GKCUMOBoxFvAhjKTL9KM-R22mDpUmgAe5oxwTOLkiGZKenqw3BvHpiEzGoyobaqvK&xkcb=SoAy67M3mDQQSyyYMB0LbzkdCdPP&fccid=2b90b1ef4c8d1ada&cmp=La-Fuente-Cargo-Corp&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  },
+  {
+    "title": "Diseñador Gráfico Junior",
+    "company": "FUERZACTIVA",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$2.200.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=a3b5a167cf376ae6&bb=BqnrAl5v7VW0fvPa1NlzWKMGrA7hskV8K304BwgXr8Ac98LhFovXOx11mEtUK-0tJ3ffUp2omhXmowLhC99RjdDTC4LT7AqC5b4fK8fe0gMBpSdjkk4CugqPDwVFmNiM&xkcb=SoCG67M3mDQQSyyYMB0KbzkdCdPP&fccid=b1271ced485a9996&cmp=FUERZACTIVA&ti=Dise%C3%B1ador+gr%C3%A1fico+junior&vjs=3"
+  },
+  {
+    "title": "Diseñador Gráfico Junior",
+    "company": "FUERZACTIVA",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$2.200.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/viewjob?jk=0f1e2d3c4b5a6978"
+  },
+  {
+    "title": "Diseñador Gráfico",
+    "company": "Creategia",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$4.000.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=7c378e53db37169a&bb=BqnrAl5v7VW0fvPa1NlzWA-PHZDaGL227yijJgcRXlsBxcbN_XCmY9Ivk0srz_WXtkeVnUqKQ3GBLNwiaA_YMspZF6M0OhkNMAvSxbYnqvhNVqTAbISer8Gh7O8-Qo1y&xkcb=SoAb67M3mDQQSyyYMB0JbzkdCdPP&fccid=e4c81a09d78f016d&cmp=Creategia&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  },
+  {
+    "title": "DISEÑADOR/A GRAFICO",
+    "company": "ACTIVA LO NATURAL SAS",
+    "location": "Bogotá, Cundinamarca",
+    "salary": "$2.000.000 - $2.200.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=9aa3412fd96abd1e&bb=BqnrAl5v7VW0fvPa1NlzWKkj64FMN2n16oZahSjT4mHzOd0_KGUkYLZ5jxu78GMVV4RigCDkc_CA-qOL8ZWYRwer1jryXJ7UQejOGHx5MOOT-u34cCwjK4m-UsIPByAV&xkcb=SoCv67M3mDQQSyyYMB0IbzkdCdPP&fccid=b334bd2dabd3fa62&cmp=ACTIVA-LO-NATURAL-SAS&ti=Dise%C3%B1ador+gr%C3%A1fico&vjs=3"
+  }
+]

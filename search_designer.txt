@@ -1,0 +1,43 @@
+🔎 Loading Indeed results for: Graphic Designer in Colombia …
+[
+  {
+    "title": "Video Editor & Motion Graphics Designer LATAM",
+    "company": "TubeScience",
+    "location": "Bogotá, Cundinamarca",
+    "salary": null,
+    "rating": 0.0,
+    "url": "https://co.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BVoySRqNYFc7RieON4wwGWIalWz1q0NRc6xgAcRvAgsaycIjxGrqN2LsodOlaDJGQ57MWb5QIhwemOjBpOK0dr9ySAt05WJQYeH0WKw__38lLkB_2J05ocrtjNsRCm4u7A7hbLovB4zicmxa48fuUO1k-_wm7S-a89m0accSQrnLraFT04xVLdKx2hashUx6B7Tul0eWHg7DUu2G2s5CQvuDKf1_lSsTv5Ojgq8-2KYStVBvSCyi0sZvEYg4EmdBKrSxb3ZarSNmE6m5vO-x4PA8VMLgMoAqws9YSUbQocMjh8M6nLjHEpH54EmOIQfs4hWtfR13ECgqatypefLaRAaX0IJ1vNw2ZbvZButOjNiB6lCon_fasmcrMOyE6Mwr7a_7jxKm4qPRezn153soL__CkIdEYe9C1WW0ZHXKfYi1XFWZFYqtbg_X-xG8tLgIFDpAJbBtZBdcY-lU8T4dcy3Oia-nN4aNpYgYXgejPeXU2qX0KpUpr4eu-mFo_piKTU54BT9xKbmWgBH_I4LFUZk4ckMs-OC2T-odfcgw34VE3EliW4dcLiXbZ7aw1YwEC8rfuoI0_CEsIreDDMWP0NDSdTdroxKvRSVgVG1b-lX6lHRtuzwulXRgRzeGU00pzraHNptrv6d4QSasUUb1Vr4gvl_DSU_bT3ep3yqJ2qBwwyvFowUgqiyCdX24Xa4AqsgWGnFDY94KhHa9CuSQ1qT1awDT2JZ9PZjwYtFeoKsA==&xkcb=SoCQ6_M3mDQPT5y6H50LbzkdCdPP&camk=UoKtGZLa3XKPb_wC6adQ6g==&p=0&fvj=0&vjs=3"
+  },
+  {
+    "title": "Senior Video Editor",
+    "company": "Blackstone Medical Services",
+    "location": "Medellín, Antioquia",
+    "salary": null,
+    "rating": 0.0,
+    "url": "https://co.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0DXhxpcY2DXiySaOJELOPMm6JUR8tyOlZk_qoB1rdoE6zdH1OgewEtGkt-TGEmkFLau10ROQykeXj89jAofpC6ohbR64R20w1VAAeOGtTrZnuzdM0-VnwuDopsvQRqvlmMNYZo4_saXJx_kJPs2oNQodUTIQRKLa_zpjK10JYBsk5E4WSF5lOiZCBxLu4p4hRYzUxviIdXm1F2azpkSEG4OHHA3-4XaJW6mhml18O5lMN7fGRfSDHXmfOb2VXdYgtXrz1S6wHm3M8iyR2uy69vRib9-p3Dd6NvWNl8QvhDQlc67YNLOqDlix42ZTdjtXvTTZ80nzmXUk0XhbLzoVn7eVmdTEuXdAu9r8CJvxEohEUHvrgDlWY4CsOY5MyU0FykRU1mK9WoA7qcWW0DiiIlitpuzbJ9O731zm7oDNXO9GZvzJBkG6QbkgvehwX-w6pj5L1aQ-K5yRV2jmvkKHbCxgb2yfbH36ZnjperPEmoo0KKwRakQgihohGF-SF8mG5eis_UbbFo3X_RQt3Pn0OkNoK77KvFOzw3Cm5-BEkGXFp286tuLhh0r65nnlobBPf52odpdUVfqUzxfIUHxVy0KWLsmoGpiFfUBaqW5fJuMLuiMAMAsCqQwsK_pTbhR8hzb_VM915acdA9NVlB9tu2ParbDL5FsNJsR0KA2qoIkdoWkJaZePR3WAUU_VtjOSoqpIhKxbBMs9A==&xkcb=SoC56_M3mDQPT5y6H50JbzkdCdPP&camk=UoKtGZLa3XIWjiKGbeJxdA==&p=1&fvj=0&vjs=3"
+  },
+  {
+    "title": "Senior Video Editor",
+    "company": "Blackstone Medical Services",
+    "location": "Medellín, Antioquia",
+    "salary": null,
+    "rating": 0.0,
+    "url": "https://co.indeed.com/viewjob?jk=abcdef0123456789"
+  },
+  {
+    "title": "Graphic Designer – Social Media, Web, & Branding",
+    "company": "Flowz Staffing",
+    "location": "Barranquilla, Atlántico",
+    "salary": "$3.800.000 por mes",
+    "rating": 0.0,
+    "url": "https://co.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BkjOTSuMjsCXPHxFLCN4L7GckzgMYv3crLqd0hrKRytjN-EwysrLRryv-u5Wo8G0OcaOMaY0jfnsZpYE4_qsASKR0vG1NYCR-0cLZSIJFGbqVeH0IIVU7Jf8Zt3zkB5_l5KNDqdNXeCLmp-Fbfv3MNiBZCeO1B-ljpLTt-IE1_pmITJTSGdAnO0gl2D0FACTwO4zj9apyCO5MqfVcNePnETAJlNiHmr5z0G8noR0LeHGaLye3-iTIereefNNMk8SVDYqhRSvMVARhoTbR7-v-S-Th9Gsehq56Jtv45Yh0ULEg33W1N5CIEP_qyCFPUMbzC3gJ9fBbnBdYB6pc-HZBIPe3QQQNZHuMRm9JCgi659KDu1ek5Ipy7ueBMs3w6wkgZ86SMArzlbwjTWXSCK9-TCPA_C1kmnuDhiW24-UG8X2n47lTrw2Ua3fI9HvAResfJgfmVFdOE-rmRVgH5si6nAYXSb5TOGPNoqsyL9OO8rt0d-YziI-Kvje0wBh9ZBNYzAqF1ssxFQMGbiCP9PPLGwpwM_QB2queUFaYOjOlEccMcW5Z6XndGJ2qaUdHpdUmEPJGfgNheF-fyC0VkT02sG_YZ2nKgbUNPHjZUQSxXtGTwkEyypCuaC0cE_9IbjJ5YXhIJcyM-MAaj6gV596ekZUd9AwCoMS2J-5YGEmNzqKrrugXZKW-AFfyQxbGAK9LIsMPkaSilOm6VfBtJt-Ka&xkcb=SoAN6_M3mDQPT5y6H50IbzkdCdPP&camk=UoKtGZLa3XJx8t6q_3sJOg==&p=2&fvj=0&vjs=3"
+  },
+  {
+    "title": "Graphic Designer - REMOTE",
+    "company": "Fygaro",
+    "location": "Colombia, Huila",
+    "salary": null,
+    "rating": 0.0,
+    "url": "https://co.indeed.com/rc/clk?jk=d91434c291d0450e&bb=WCfQly1t9jodLpkjOJbM-eQuZYlmpb-NK6gpSJ4VFRZZjrW80uBpggGlKlDEubwhgaCRJBZEv-AszKJ27CE4pVo_cOVqyndhh3iRAi8ECVAQfmCabn6csFw4tV52MKa8kP6-37YgZ_BJrlMYPArd7w%3D%3D&xkcb=SoB367M3mDQPT5y6H50PbzkdCdPP&fccid=8e44a4c19e240d22&vjs=3"
+  }
+]
