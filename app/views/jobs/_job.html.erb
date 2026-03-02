@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="col-md-4 text-md-end">
-        <%= link_to "Apply Now", job.url, class: "btn btn-primary btn-lg w-100", target: "_blank" %>
+        <%= link_to "Apply Now", job.safe_url, class: "btn btn-primary btn-lg w-100", target: "_blank" if job.safe_url %>
       </div>
     </div>
     <hr>

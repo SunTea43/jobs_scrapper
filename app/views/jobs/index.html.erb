@@ -140,7 +140,7 @@
                   </div>
                   <div class="btn-group btn-group-sm">
                     <%= link_to "View", job, class: "btn btn-outline-info" %>
-                    <%= link_to "Apply", job.url, class: "btn btn-primary", target: "_blank" %>
+                    <%= link_to "Apply", job.safe_url, class: "btn btn-primary", target: "_blank" if job.safe_url %>
                   </div>
                 </td>
               </tr>
