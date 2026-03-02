@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  company: MyString
-  location: MyString
-  salary: MyString
-  url: MyString
-  score: 1.5
-  source: MyString
+  title: Developer
+  company: Tech Corp
+  location: Remote
+  salary: $100k
+  url: https://example.com/job1
+  score: 4.5
+  source: Indeed
 
 two:
-  title: MyString
-  company: MyString
-  location: MyString
-  salary: MyString
-  url: MyString
-  score: 1.5
-  source: MyString
+  title: Engineer
+  company: Innovate
+  location: NY
+  salary: $120k
+  url: https://example.com/job2
+  score: 3.5
+  source: LinkedIn
