@@ -1,8 +1,8 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Jobs") do |sheet|
   # Header row
-  sheet.add_row ["Title", "Company", "Location", "Salary", "Score", "Source", "Status", "URL", "Date Found"]
-  
+  sheet.add_row [ "Title", "Company", "Location", "Salary", "Score", "Source", "Status", "URL", "Date Found" ]
+
   # Data rows
   @jobs.each do |job|
     sheet.add_row [
@@ -17,7 +17,7 @@ wb.add_worksheet(name: "Jobs") do |sheet|
       job.created_at.to_date
     ]
   end
-  
+
   # Styling (optional but nice)
   sheet.row_style 0, wb.styles.add_style(b: true, bg_color: "EEEEEE")
 end
