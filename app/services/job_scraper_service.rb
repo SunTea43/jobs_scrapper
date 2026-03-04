@@ -6,10 +6,11 @@ class JobScraperService
   def initialize(keyword)
     @keyword = keyword
     @scrapers = [
-      { name: "Indeed", script: "indeed_searcher.py" },
-      { name: "Computrabajo", script: "computrabajo_searcher.py" },
-      { name: "El Empleo", script: "elempleo_searcher.py" },
-      { name: "LinkedIn", script: "linkedin_scrapper.py" }
+      { name: "Indeed", script: "scrapers/indeed_searcher.py" },
+      { name: "Computrabajo", script: "scrapers/computrabajo_searcher.py" },
+      { name: "El Empleo", script: "scrapers/elempleo_searcher.py" },
+      { name: "El Empleo (Alternative)", script: "scrapers/elempleo2_searcher.py" },
+      { name: "LinkedIn", script: "scrapers/linkedin_scrapper.py" }
     ]
   end
 
@@ -27,10 +28,10 @@ class JobScraperService
     script_path = scraper[:script]
 
     begin
-      output, status = Open3.capture3(python_bin, script_path, @keyword)
+      stdout, stderr, status = Open3.capture3(python_bin, script_path, @keyword)
 
       if status.success?
-        json_match = output.match(/\[.*\]/m)
+        json_match = stdout.match(/\[.*\]/m)
         if json_match
           jobs_json = JSON.parse(json_match[0])
           jobs_json.each do |job_data|
@@ -47,7 +48,7 @@ class JobScraperService
           end
         end
       else
-        Rails.logger.error "Scraper #{scraper[:name]} failed: #{output}"
+        Rails.logger.error "Scraper #{scraper[:name]} failed: #{stderr.presence || stdout}"
       end
     rescue => e
       Rails.logger.error "Error running #{scraper[:name]}: #{e.message}"
