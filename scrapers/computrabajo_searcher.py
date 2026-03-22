@@ -95,7 +95,7 @@ import sys
 async def main():
     keyword = sys.argv[1] if len(sys.argv) > 1 else "Desarrollador"
     scraper = ComputrabajoScraper()
-    results = await scraper.search(keyword, limit=10)
+    results = await scraper.search(keyword, limit=20)
     print(json.dumps(results, indent=2, ensure_ascii=False))
 
 
