@@ -1,7 +1,7 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Jobs") do |sheet|
   # Header row
-  sheet.add_row [ "Title", "Company", "Location", "Salary", "Score", "Source", "Status", "URL", "Date Found" ]
+  sheet.add_row [ "Title", "Company", "Location", "Salary", "Score", "Source", "Status", "URL", "Created At" ]
 
   # Data rows
   @jobs.each do |job|

@@ -10,7 +10,8 @@ class JobScraperService
       { name: "Computrabajo", script: "scrapers/computrabajo_searcher.py" },
       { name: "El Empleo", script: "scrapers/elempleo_searcher.py" },
       { name: "El Empleo (Alternative)", script: "scrapers/elempleo2_searcher.py" },
-      { name: "LinkedIn", script: "scrapers/linkedin_scrapper.py" }
+      { name: "LinkedIn", script: "scrapers/linkedin_scrapper.py" },
+      { name: "Magneto", script: "scrapers/magneto_searcher.py" }
     ]
   end
 

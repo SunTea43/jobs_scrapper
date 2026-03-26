@@ -114,7 +114,7 @@ class JobsController < ApplicationController
 
   def jobs_to_csv(jobs)
     CSV.generate(headers: true) do |csv|
-      csv << [ "Title", "Company", "Location", "Salary", "Score", "Source", "Status", "URL", "Date Found" ]
+      csv << [ "Title", "Company", "Location", "Salary", "Score", "Source", "Status", "URL", "Created At" ]
       jobs.each do |job|
         csv << [ job.title, job.company, job.location, job.salary, job.score, job.source, job.status, job.url, job.created_at.to_date ]
       end
